@@ -1,0 +1,23 @@
+{
+  "name": "emloyee-finder",
+  "version": "1.0.0",
+  "description": "employee finder homework",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterjang0210/EmployeeFinder.git"
+  },
+  "author": "Peter Jang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterjang0210/EmployeeFinder/issues"
+  },
+  "homepage": "https://github.com/peterjang0210/EmployeeFinder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
