@@ -1,4 +1,6 @@
 const express = require("express");
+const employees = require("./app/data/employees");
+const path = require("path");
 
 const PORT = 8080;
 
