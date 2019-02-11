@@ -1,22 +1,18 @@
 const express = require("express");
-const employees = require("./app/data/employees");
 const path = require("path");
-const htmlRoutes = require("./app/routing/htmlRoutes");
-
-const PORT = 8080;
 
 const app = express();
 
+const PORT = 8080;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+require("./routing/apiRoutes.js")(app);
+require("./routing/htmlRoutes.js")(app);
+
 app.use(express.static(path.join(__dirname + "app/public")));
-
-app.get(htmlRoutes.defaultPage(), function(req, res){
-    res.sendFile(path.join(__dirname, "app/public/home.html"));
-});
-
-app.get(htmlRoutes.surveyRoute(), function(req, res){
-    res.sendFile(path.join(__dirname, "app/public/survey.html"));
-});
 
 app.listen(PORT, function () {
     console.log(`App listening on PORT ${PORT}`);
-  });
+});
