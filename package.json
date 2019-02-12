@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/peterjang0210/EmployeeFinder#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "jQuery": "^1.7.4"
+    "express": "^4.16.4"
   }
 }
