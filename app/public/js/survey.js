@@ -11,7 +11,11 @@ $(function(){
     }
 
     const compare = function (response) {
-        console.log(response);
+        const userInputVals = [];
+        for(let i = 1; i <= 10; i++){
+            userInputVals.push($(`#surveyQ${i}`).val());
+            console.log($(`#surveyQ${i}`).val());
+        }
     }
 
     $("#submit").on('click', getEmployees);
