@@ -5,7 +5,7 @@ $(function () {
             const surveyInput = $(`#surveyQ${i}`).val();
             const nameInput = $("#inputName").val();
             const imageLink = $("#inputLink").val();
-            if (surveyInput !== null && nameInput !== null && imageLink !== null && i === 10) {
+            if (surveyInput !== null && nameInput !== "" && imageLink !== "" && i === 10) {
                 $.ajax({
                     url: "/api/employees",
                     method: "GET",
@@ -14,12 +14,14 @@ $(function () {
                     compare(response);
                 })
             }
-            else if (surveyInput === null || nameInput === null && imageLink === null) {
+            else if (surveyInput === null || nameInput === "" && imageLink === "") {
                 $("#alertBlock").empty();
                 $("#alertBlock").append(`<div id="error" class="alert alert-danger">Please fill out all fields before submitting!</div>`);
                 break;
             }
         }
+        $("#inputName").val("");
+        $("#inputLink").val("");
     }
 
     const compare = function (response) {
@@ -53,6 +55,7 @@ $(function () {
         $(".modal-body").empty();
         $(".modal-body").append(`</div><p>${response[index].name}</p>
         <img src=${response[index].photo}><div>`);
+        $("#myModal").modal("show");
     }
 
     $("#submit").on('click', getEmployees);
