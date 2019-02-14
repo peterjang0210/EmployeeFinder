@@ -1,8 +1,12 @@
 $(function () {
     const getEmployees = function (event) {
         event.preventDefault();
+        const surveyInputArray = [];
         for (let i = 1; i <= 10; i++) {
             const surveyInput = $(`#surveyQ${i}`).val();
+            if (surveyInput !== null) {
+                surveyInputArray.push(surveyInput);
+            }
             const nameInput = $("#inputName").val();
             const imageLink = $("#inputLink").val();
             if (surveyInput !== null && nameInput !== "" && imageLink !== "" && i === 10) {
@@ -12,6 +16,16 @@ $(function () {
                     contentType: "application/json"
                 }).then(function (response) {
                     compare(response);
+                }).then(function () {
+                    $.ajax({
+                        url: "/api/employees",
+                        method: "POST",
+                        data: {
+                            "name": nameInput,
+                            "photo": imageLink,
+                            "scores": surveyInputArray
+                        }
+                    })
                 })
             }
             else if (surveyInput === null || nameInput === "" && imageLink === "") {
