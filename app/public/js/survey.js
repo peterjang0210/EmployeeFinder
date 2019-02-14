@@ -34,8 +34,7 @@ $(function () {
         for (let j = 0; j < response.length; j++) {
             let totalDifference = 0;
             for (let k = 0; k < response[j].scores.length; k++) {
-                totalDifference += Math.abs(response[j].scores[k] - userInputVals[k]
-                );
+                totalDifference += Math.abs(response[j].scores[k] - userInputVals[k]);
             }
             differences.push(totalDifference);
         }
