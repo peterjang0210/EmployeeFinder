@@ -1,4 +1,5 @@
 $(function () {
+    //makes api call to server if all input fields are completed, else displays error message
     const getEmployees = function (event) {
         event.preventDefault();
         const surveyInputArray = [];
@@ -38,6 +39,7 @@ $(function () {
         $("#inputLink").val("");
     }
 
+    //compares user input values with current employee values to determine best fit
     const compare = function (response) {
         const userInputVals = [];
         const differences = [];
@@ -64,6 +66,7 @@ $(function () {
         renderEmployee(indexOfSmallest, response);
     }
 
+    //renders best fit employee in modal on html
     const renderEmployee = function (index, response) {
         $(".modal-body").empty();
         $(".modal-body").append(`</div><p>${response[index].name}</p>
