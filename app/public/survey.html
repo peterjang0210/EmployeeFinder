@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="./js/survey.js"></script>
     <title>Survey</title>
 </head>
@@ -178,8 +181,9 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
+            <div id="alertBlock"></div>
             <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal"
-                data-target="#modal"> Submit</button>
+                data-target="#myModal"> Submit</button>
         </form>
         <hr>
         <div class="employeeAPI">
@@ -187,18 +191,13 @@
         </div>
     </main>
 
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-    <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Best Match</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                 </div>
@@ -206,7 +205,6 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
